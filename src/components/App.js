@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect,useRef } from 'react';
 import '../App.css';
 import TodoForm from '../components/TodoForm';
 import TodoList from './TodoList';
@@ -6,6 +6,7 @@ import TodoFilter from './TodoFilter';
 import useToggle from '../hooks/FilterToggle';
 import useLocalStorage from '../hooks/useLocalStorage';
 import { TodoContext } from '../context/TodoContext';
+import { CSSTransition } from 'react-transition-group';
 
 const TodoApp = () => {
   const [editingId, setEditingId] = useState(null);
@@ -13,7 +14,8 @@ const TodoApp = () => {
   const [filter, setFilter] = useState('all');
   // const [name, setName] = useState('');
   const [showFilter, toggleFilter] = useToggle(true);
-  const nameInputEl = useRef(null);
+  // const nameInputEl = useRef(null);
+  const filterRef = useRef(null); //
   const [name, setName] = useLocalStorage('name', '');
   const [todos, setTodos] = useLocalStorage('todos',[] 
     // [
@@ -116,15 +118,17 @@ const TodoApp = () => {
         {showFilter ? 'Hide Filters' : 'Show Filters'}
       </button>
 
-      {showFilter && (
-        <div className="todo-filters">
-          <TodoFilter
-            filter={filter}
-            setFilter={setFilter}
-            clearCompleted={clearCompleted}
-          />
-        </div>
-      )}
+      {/* {showFilter && ( */}
+        <CSSTransition in={showFilter} timeout={300} classNames="fade" unmountOnExit nodeRef={filterRef}>
+          <div className="todo-filters">
+            <TodoFilter
+              filter={filter}
+              setFilter={setFilter}
+              clearCompleted={clearCompleted}
+            />
+          </div>
+        </CSSTransition>
+      {/* )} */}
     </div>
     </TodoContext.Provider>
   );

@@ -132,10 +132,45 @@
 
 .toggle-filter-btn {
   margin: 10px 0;
-  padding: 8px 12px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
+  padding: 5px 8px;
+  border: 1px solid #ccc;
+  background: white;
   border-radius: 4px;
   cursor: pointer;
+}
+
+.fade-enter{
+  opacity: 0;
+  transform: translateY(-20px);
+}
+.fade-enter-active{
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s ease-in;
+}
+.fade-enter-exit{
+  opacity: 1;
+  transform: translateY(0);
+}
+.fade-enter-exit-active{
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
+}
+
+nav{
+  padding: 1rem;
+  color: white;
+}
+
+nav ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+nav ul li:not(:first-child){
+  margin-left: 16px;
 }
