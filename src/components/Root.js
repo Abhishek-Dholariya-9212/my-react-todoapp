@@ -6,6 +6,7 @@ import NavigationBar from './NavigationBar';
 import Blog from '../pages/Blog';
 import BlogPsot from '../pages/BlogPsot';
 import Notfound from '../pages/Notfound';
+import SimpleCrud from '../pages/SimpleCrud';
 import { BrowserRouter as Router, Routes, Route } from 'react-router';
 
 export default function Root() {
@@ -16,8 +17,8 @@ export default function Root() {
         {path: '/contact', name:'Contact', element: <Contact />, exact: true },
         {path: '/blog', name:'Blog' ,element: <Blog />, exact: true },
         {path: '/blog/:id', name:'BlogPost' ,element: <BlogPsot />, exact: true },
+        {path: '/simpleCrud', name:'SimpleCrud', element: <SimpleCrud />, exact: true },
         {path: '*', name:'NotFound' ,element: <Notfound />, exact: true },
-        {path: '/reddit', name:'Reddit' ,element: <h1>Reddit</h1>, exact: true },
     ]
     return (
     <Router>    
