@@ -8,6 +8,7 @@ export default function NavigationBar() {
             <li><NavLink to="/about" activeClassName="active" exact>About</NavLink></li>
             <li><NavLink to="/contact" activeClassName="active" exact>Contact</NavLink></li>
             <li><NavLink to="/blog" activeClassName="active" exact>Blog</NavLink></li>
+            <li><NavLink to="/reddit" activeClassName="active" exact>Api</NavLink></li>
         </ul>
     </nav>
   )

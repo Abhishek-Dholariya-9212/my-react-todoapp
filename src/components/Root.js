@@ -17,6 +17,7 @@ export default function Root() {
         {path: '/blog', name:'Blog' ,element: <Blog />, exact: true },
         {path: '/blog/:id', name:'BlogPost' ,element: <BlogPsot />, exact: true },
         {path: '*', name:'NotFound' ,element: <Notfound />, exact: true },
+        {path: '/reddit', name:'Reddit' ,element: <h1>Reddit</h1>, exact: true },
     ]
     return (
     <Router>    
